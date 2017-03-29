@@ -58,6 +58,24 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.6</version>
 		</dependency>
+		<!-- 支持 OSS 数据源 -->
+		<dependency>
+			<groupId>com.aliyun.emr</groupId>
+			<artifactId>emr-core</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<!-- 支持 MNS、ONS、LogService、MaxCompute数据源 （支持Spark1.x） -->
+		<dependency>
+			<groupId>com.aliyun.emr</groupId>
+			<artifactId>emr-sdk_2.10</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<!-- 支持 MNS、ONS、LogService、MaxCompute数据源 （支持Spark2.x） -->
+		<dependency>
+			<groupId>com.aliyun.emr</groupId>
+			<artifactId>emr-sdk_2.11</artifactId>
+			<version>1.3.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -67,7 +85,7 @@
 					<archive>
 						<manifest>
 							<!--这里要替换成jar包main方法所在类 -->
-							<mainClass>cn.celloud.javaSpark.test.day01.WordCount</mainClass>
+							<mainClass>cn.celloud.javaSpark.test.day02.WordCount_OSS</mainClass>
 						</manifest>
 						<manifestEntries>
 							<Class-Path>.</Class-Path>
@@ -79,7 +97,7 @@
 				</configuration>
 				<executions>
 					<execution>
-						<id>make-assembly</id> 
+						<id>make-assembly</id>
 						<phase>package</phase> <!-- 指定在打包节点执行jar包合并操作 -->
 						<goals>
 							<goal>single</goal>
