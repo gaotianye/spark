@@ -85,7 +85,7 @@
 					<archive>
 						<manifest>
 							<!--这里要替换成jar包main方法所在类 -->
-							<mainClass>cn.celloud.javaSpark.test.day02.WordCount_OSS</mainClass>
+							<mainClass>cn.celloud.javaSpark.test.day01.WordCount2HDFS</mainClass>
 						</manifest>
 						<manifestEntries>
 							<Class-Path>.</Class-Path>
