@@ -19,7 +19,7 @@ public class RDD2DataFrameReflection {
 		JavaSparkContext sc = new JavaSparkContext(conf);
 		SQLContext sqlContext = new SQLContext(sc);
 		//读取数据源
-		JavaRDD<String> lines = sc.textFile("C:\\Users\\Administrator\\Desktop\\students.txt");
+		JavaRDD<String> lines = sc.textFile("students.txt");
 		//map转换成Student对象
 		JavaRDD<Student> students = lines.map(new Function<String, Student>() {
 			private static final long serialVersionUID = 1L;
