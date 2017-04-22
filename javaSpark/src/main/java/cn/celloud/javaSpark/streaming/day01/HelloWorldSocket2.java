@@ -16,7 +16,6 @@ import scala.Tuple2;
 
 /**
  * socket或者kakfa方式
- * 
  * @author Administrator
  */
 public class HelloWorldSocket2 {
@@ -24,7 +23,9 @@ public class HelloWorldSocket2 {
 		/**
 		 * 2个线程，1个用来拉去数据，l个用来计算
 		 * 如果只开启一个，那么只能看见提交job，不能看见计算
-		 * 或者不设定setMaster也可以
+		 * 如果不设定setMaster，首先，必须要求集群节点上，有>1个cpu core，
+		 * 其次，给Spark Streaming的每个executor分配的core，必须>1，
+		 * 这样，才能保证分配到executor上运行的输入DStream，两条线程并行，一条运行Receiver，接收数据；
 		 */
 		SparkConf conf = new SparkConf().setMaster("local[2]").setAppName("HelloWorldSocket2");
 		// 使用时JavaStremingContext 间隔1s形成一个DStream
