@@ -41,9 +41,9 @@ public class HelloWorldSocket2 {
 		JavaDStream<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
 			private static final long serialVersionUID = 1L;
 
-			// 注意：Arrays.asList(line.split("s+"));正则表达式 多个空格
+			// 注意：Arrays.asList(line.split("\\s+"));正则表达式 多个空格
 			public Iterable<String> call(String line) throws Exception {
-				return Arrays.asList(line.split("s+"));
+				return Arrays.asList(line.split("\\s+"));
 			}
 		});
 		JavaPairDStream<String, Integer> pairs = words.mapToPair(new PairFunction<String, String, Integer>() {
