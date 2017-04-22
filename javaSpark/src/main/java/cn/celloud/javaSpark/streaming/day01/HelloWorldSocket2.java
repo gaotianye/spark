@@ -28,7 +28,7 @@ public class HelloWorldSocket2 {
 		 * 这样，才能保证分配到executor上运行的输入DStream，两条线程并行，一条运行Receiver，接收数据；
 		 */
 		SparkConf conf = new SparkConf().setMaster("local[2]").setAppName("HelloWorldSocket2");
-		// 使用时JavaStremingContext 间隔1s形成一个DStream
+		// 使用时JavaStremingContext 间隔5s形成一个DStream
 		JavaStreamingContext jsc = new JavaStreamingContext(conf, Durations.seconds(5));
 		/*
 		 * 调用JavaStreamingContext的socketTextStream()方法，可以创建一个数据源为Socket网络端口的
