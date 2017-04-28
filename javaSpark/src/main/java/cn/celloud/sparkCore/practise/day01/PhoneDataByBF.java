@@ -18,10 +18,10 @@ import scala.Tuple2;
  */
 public class PhoneDataByBF {
 	public static void main(String[] args) {
-		SparkConf conf = new SparkConf().setAppName("PhoneDataByBF");
+		SparkConf conf = new SparkConf().setMaster("local").setAppName("PhoneDataByBF");
 		JavaSparkContext sc = new JavaSparkContext(conf);
 		//读取log日志
-		JavaRDD<String> accessLogRDD = sc.textFile("hdfs://xxx:9000/prictise/access.log");
+		JavaRDD<String> accessLogRDD = sc.textFile("C:\\Users\\Administrator\\Desktop\\access2.log");
 		//将log日志RDD转换成key-value格式，key：用户标识   value：LogInfo对象
 		JavaPairRDD<String,AccessLogInfo> accessLogPairRDD = mapAccessLogRDD2Pair(accessLogRDD);
 		//安装用户标识，将用户所有的上行和下行相加 key:用户标识    value：loginfo对象（time：最早的   上行和下行累加和）
@@ -34,7 +34,8 @@ public class PhoneDataByBF {
 		List<Tuple2<AccessLogSortKey, String>> take = sortByKey.take(10);
 		
 		for (Tuple2<AccessLogSortKey, String> tuple2 : take) {
-			System.out.println(tuple2._2+":"+tuple2._1);
+			System.out.println(tuple2._2+":"+tuple2._1.getUpTraffic()+","+
+								tuple2._1.getDownTraffic()+","+tuple2._1.getTimestamp());
 		}
 		sc.close();
 	}
