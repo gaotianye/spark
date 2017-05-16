@@ -52,5 +52,6 @@ public class GroupByKeyTest {
 				System.out.println("scores : "+values._2);
 			}
 		});
+		sc.close();
 	}
 }

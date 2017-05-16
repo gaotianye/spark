@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.api.java.function.VoidFunction;
 
@@ -59,5 +58,6 @@ public class FoldByKeyTest {
 				System.out.println(t._1+"\t"+t._2);
 			}
 		});
+		sc.close();
 	}
 }

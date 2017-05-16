@@ -33,5 +33,6 @@ public class FilterTest {
 				System.out.println(value);
 			}
 		});
+		sc.close();
 	}
 }

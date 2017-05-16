@@ -77,5 +77,6 @@ public class CombineByKeyTest {
 				System.out.println(t._1+"\t"+t._2);
 			}
 		});
+		sc.close();
 	}
 }

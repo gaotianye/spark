@@ -43,5 +43,6 @@ public class FilterAndCoalesceTest {
 				System.out.println(value);
 			}
 		});
+		sc.close();
 	}
 }

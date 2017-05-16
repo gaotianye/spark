@@ -84,6 +84,6 @@ public class CombineByKeyTest2 {
 				System.out.println(t._1+"\t"+t._2);
 			}
 		});
-		
+		sc.close();
 	}
 }

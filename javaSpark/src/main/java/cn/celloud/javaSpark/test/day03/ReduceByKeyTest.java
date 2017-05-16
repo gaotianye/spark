@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.api.java.function.VoidFunction;
@@ -49,5 +48,6 @@ public class ReduceByKeyTest {
 				System.out.println("total scores : "+values._2);
 			}
 		});
+		sc.close();
 	}
 }

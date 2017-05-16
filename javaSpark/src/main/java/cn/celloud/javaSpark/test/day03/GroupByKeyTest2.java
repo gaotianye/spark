@@ -49,5 +49,6 @@ public class GroupByKeyTest2 {
 				System.out.println("key:"+t._1+",value:"+t._2);
 			}
 		});
+		sc.close();
 	}
 }

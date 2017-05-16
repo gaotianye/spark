@@ -68,7 +68,6 @@ public class PhoneDataByBF {
 	 * @param accessLogPairRDD
 	 * @return
 	 */
-	@SuppressWarnings("unused")
 	private static JavaPairRDD<String, AccessLogInfo> aggregateByDeviceId(JavaPairRDD<String, AccessLogInfo> accessLogPairRDD){
 		JavaPairRDD<String, AccessLogInfo> reduceByKeyRDD = accessLogPairRDD.reduceByKey(new Function2<AccessLogInfo, AccessLogInfo, AccessLogInfo>() {
 			private static final long serialVersionUID = 1L;
@@ -96,7 +95,6 @@ public class PhoneDataByBF {
 	 * @param aggrAccessLogPairRDD
 	 * @return
 	 */
-	@SuppressWarnings("unused")
 	private static JavaPairRDD<AccessLogSortKey, String> mapRDDKey2SortKey(JavaPairRDD<String, AccessLogInfo> aggrAccessLogPairRDD){
 		JavaPairRDD<AccessLogSortKey, String> mapToPair = aggrAccessLogPairRDD.mapToPair(new PairFunction<Tuple2<String,AccessLogInfo>, AccessLogSortKey, String>() {
 			private static final long serialVersionUID = 1L;
