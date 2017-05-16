@@ -31,8 +31,8 @@ public class WordCount {
 		/**
 		 * gao tian ye hello world
 		 */
-		List list = new ArrayList();
 		/*
+			List list = new ArrayList();
 		 * list.add("my"); list.add("name"); list.add("my"); list.add("name");
 		 * list.add("my"); list.add("name");
 		 */
@@ -76,5 +76,6 @@ public class WordCount {
 				System.out.println("word is :" + result._1 + "  count is :" + result._2);
 			}
 		});
+		sc.close();
 	}
 }

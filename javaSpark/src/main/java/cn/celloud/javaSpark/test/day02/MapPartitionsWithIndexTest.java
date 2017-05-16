@@ -41,5 +41,6 @@ public class MapPartitionsWithIndexTest {
 				System.out.println(t);
 			}
 		});
+		sc.close();
 	}
 }

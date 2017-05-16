@@ -43,5 +43,6 @@ public class MapPartitionsTest {
 			}
 		});
 		System.out.println("mapPartitionsRDD~~~~~~~~~~~~~~~~~~~~~~" + mapPartitionsRDD.collect());
+		sc.close();
 	}
 }

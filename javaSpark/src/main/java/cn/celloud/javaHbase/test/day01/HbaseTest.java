@@ -42,11 +42,13 @@ import org.junit.Test;
  * @author Administrator
  *
  */
-/*public class HbaseTest {
+@SuppressWarnings("deprecation")
+public class HbaseTest {
 	HBaseAdmin hadmin = null;
 	String tableName = "test_tbl1";
 	String familyName = "cf1";
 	HTable htable = null;
+	
 	
 	@Before
 	public void begin() throws Exception{
@@ -66,10 +68,10 @@ import org.junit.Test;
 			htable.close();
 		}
 	}
-	*//**
+	/**
 	 * 创建表
 	 * @throws Exception
-	 *//*
+	 */
 	@Test
 	public void createTable() throws Exception{
 		//判断表是否存在，如果存在，先disable，然后drop
@@ -90,10 +92,10 @@ import org.junit.Test;
 		System.out.println("create table ok .............");
 	}
 	
-	*//**
+	/**
 	 * 往表中插入数据
 	 * @throws Exception
-	 *//*
+	 */
 	@Test
 	public void insert() throws Exception{
 		//时间戳
@@ -106,10 +108,10 @@ import org.junit.Test;
 		htable.put(put);
 	}
 	
-	*//**
+	/**
 	 * 查看表信息
 	 * @throws Exception
-	 *//*
+	 */
 	@Test
 	public void get() throws Exception{
 		//时间戳
@@ -119,42 +121,42 @@ import org.junit.Test;
 		get.addColumn(familyName.getBytes(), "time".getBytes());
 		Result result = htable.get(get);
 		
-		*//**
+		/**
 		 * 问：为什么前文get时已经指定了列，下面拿的时候还要指定一次呢？
 		 * 答：hbase是列式存储，列可以随意添加，一行数据的列有很多，查询时只需要查询指定的列即可。
 		 *    result结果值中，同样只需要读想要读的内容。当读的内容 在查询时没有执行，则报错。
-		 *//*
+		 */
 		Cell cell = result.getColumnLatestCell(familyName.getBytes(), "type".getBytes());
 		System.out.println(new String(CellUtil.cloneValue(cell)));
 	}
 	
 	
 	Random r = new Random();
-	*//**
+	/**
 	 * 随机生成手机号码
 	 * @param prefix
 	 * @return
-	 *//*
+	 */
 	public String getPhoneNum(String prefix){
 		return prefix+String.format("%08d", r.nextInt(99999999));
 	}
 	
-	*//**
+	/**
 	 * 随机生成时间
 	 * @param year
 	 * @return
-	 *//*
+	 */
 	public String getDate(String year){
 		return year + String.format("%02d%02d%02d%02d%02d", new Object[]{
 			r.nextInt(12)+1,r.nextInt(29)+1,r.nextInt(23),r.nextInt(60),r.nextInt(60)	
 		});
 	}
 	
-	*//**
+	/**
 	 * 练习1：插入 10个手机号（10个用户），每个用户100条通话记录
 	 * 满足查询  时间降序排序
 	 * @throws Exception 
-	 *//*
+	 */
 	@Test
 	public void insertDB() throws Exception{
 		List<Put> puts = new ArrayList<Put>();
@@ -179,14 +181,14 @@ import org.junit.Test;
 		htable.put(puts);
 	}
 	
-	*//**
+	/**
 	 * 练习2：查询指定月份的通话详单
 	 * 展示信息如下：3月
 	 * 31号 
 	 * 30号
 	 * .....
 	 * @throws Exception
-	 *//*
+	 */
 	@Test
 	public void scanDB() throws Exception{
 		Scan scan = new Scan();
@@ -206,13 +208,13 @@ import org.junit.Test;
 		}
 	}
 	
-	*//**
+	/**
 	 * 查询某个手机号所有  主叫/被叫类型详单（例如，主叫type=0）
 	 * 使用过滤器来解决，但是效率不是很高
 	 * 通常将主要查询的业务，放在rowkey中。例如现在rowkey：手机号_时间（上边代码解决了如何让其最后倒序显示时间）
 	 * rowkey长度：64kb是最大值
 	 * @throws Exception
-	 *//*
+	 */
 	@Test
 	public void scanDB2() throws Exception{
 		//所有过滤条件都要用上
@@ -245,4 +247,4 @@ import org.junit.Test;
 		Date parse = sdf.parse(d);
 		System.out.println(parse);
 	}
-}*/
+}
