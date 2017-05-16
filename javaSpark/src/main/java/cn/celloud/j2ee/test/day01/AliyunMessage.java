@@ -1,4 +1,4 @@
-package cn.celloud.j2ee.test.day01;
+/*package cn.celloud.j2ee.test.day01;
 
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
@@ -32,3 +32,4 @@ public class AliyunMessage {
 		}
 	}
 }
+*/

@@ -7,8 +7,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
   
 import java.io.*;  
 
+@SuppressWarnings({ "unused", "deprecation" })
 public class DownLoad {  
-    private String workPath = null;  
+	private String workPath = null;  
     private String downLoadUrl = null;  
     private DefaultHttpClient httpClient = new DefaultHttpClient();  
   

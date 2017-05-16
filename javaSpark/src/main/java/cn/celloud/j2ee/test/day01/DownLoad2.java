@@ -6,8 +6,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
   
 import java.io.*;  
 
+@SuppressWarnings("deprecation")
 public class DownLoad2 {  
-    private DefaultHttpClient httpClient = new DefaultHttpClient();  
+	private DefaultHttpClient httpClient = new DefaultHttpClient();  
   
     public void downLoad(String url) {  
         try {  

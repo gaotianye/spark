@@ -35,6 +35,7 @@ import org.apache.http.message.BasicNameValuePair;
  * @author Administrator
  *
  */
+@SuppressWarnings("deprecation")
 public class HttpUtils {
 
 	/**
@@ -261,6 +262,7 @@ public class HttpUtils {
 
 		return sbUrl.toString();
 	}
+
 
 	private static HttpClient wrapClient(String host) {
 		HttpClient httpClient = new DefaultHttpClient();
