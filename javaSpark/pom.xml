@@ -18,7 +18,7 @@
 
 	<dependencies>
 		<!-- 短信 -->
-		<dependency>
+ 		<dependency>
 			<groupId>com.aliyun</groupId>
 			<artifactId>aliyun-java-sdk-core</artifactId>
 			<version>2.4.2</version>
@@ -33,39 +33,44 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.4</version>
-			<scope>test</scope>
 		</dependency>
 		<!-- Spark -->
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-core_2.10</artifactId>
 			<version>${spark.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-sql_2.10</artifactId>
 			<version>${spark.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-hive_2.10</artifactId>
 			<version>${spark.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-streaming_2.10</artifactId>
 			<version>${spark.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-streaming-kafka_2.10</artifactId>
 			<version>${spark.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<!-- hadoop -->
 		<dependency>
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-client</artifactId>
 			<version>${hadoop.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<!-- mysql -->
 		<dependency>
@@ -74,39 +79,71 @@
 			<version>5.1.6</version>
 		</dependency>
 		<!-- 支持 OSS 数据源 -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>com.aliyun.emr</groupId>
 			<artifactId>emr-core</artifactId>
 			<version>1.3.1</version>
 		</dependency>
-		<!-- 支持 MNS、ONS、LogService、MaxCompute数据源 （支持Spark1.x） -->
+		支持 MNS、ONS、LogService、MaxCompute数据源 （支持Spark1.x）
 		<dependency>
 			<groupId>com.aliyun.emr</groupId>
 			<artifactId>emr-sdk_2.10</artifactId>
 			<version>1.3.1</version>
 		</dependency>
-		<!-- 支持 MNS、ONS、LogService、MaxCompute数据源 （支持Spark2.x） -->
+		支持 MNS、ONS、LogService、MaxCompute数据源 （支持Spark2.x）
 		<dependency>
 			<groupId>com.aliyun.emr</groupId>
 			<artifactId>emr-sdk_2.11</artifactId>
 			<version>1.3.1</version>
-		</dependency>
+		</dependency> -->
 		<!-- hbase -->
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-it</artifactId>
 			<version>1.1.2</version>
 		</dependency>
+		<!-- 查询手机号入网时间 -->
+<!-- 		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.15</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-util</artifactId>
+			<version>9.3.7.v20160115</version>
+		</dependency>
+		alibaba json
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.17</version>
+		</dependency> -->
 	</dependencies>
-	<build>
+<!-- 	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
 					<archive>
 						<manifest>
-							<!--这里要替换成jar包main方法所在类 -->
-							<mainClass>cn.celloud.javaSpark.test.day01.WordCount2HDFS</mainClass>
+							这里要替换成jar包main方法所在类
+							<mainClass>cn.celloud.javaSpark.sql.day02.LoadAndSaveTest</mainClass>
 						</manifest>
 						<manifestEntries>
 							<Class-Path>.</Class-Path>
@@ -119,7 +156,7 @@
 				<executions>
 					<execution>
 						<id>make-assembly</id>
-						<phase>package</phase> <!-- 指定在打包节点执行jar包合并操作 -->
+						<phase>package</phase> 指定在打包节点执行jar包合并操作
 						<goals>
 							<goal>single</goal>
 						</goals>
@@ -127,6 +164,6 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>
+	</build> -->
 </project>
 
