@@ -1,4 +1,4 @@
-/*package cn.celloud.j2ee.test.day01;
+package cn.celloud.j2ee.test.day01;
 
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
@@ -15,7 +15,7 @@ public class AliyunMessage {
 	}
 	public static void test() {
 		try {
-			IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", "UrKY3uHmTuwajVKU", "zK4cU4cEHPEnQNxu5NnnmCSvBHXuOd");
+			IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", "0U0rKY3uHmTuwajVK0U0", "0z0K4cU4cEHPEnQNxu5NnnmCSvBHXuO0d0");
 			DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", "Sms", "sms.aliyuncs.com");
 			IAcsClient client = new DefaultAcsClient(profile);
 			SingleSendSmsRequest request = new SingleSendSmsRequest();
@@ -32,4 +32,3 @@ public class AliyunMessage {
 		}
 	}
 }
-*/
